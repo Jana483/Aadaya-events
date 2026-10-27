@@ -118,3 +118,52 @@ thead th { color: var(--muted); }
   .card h2, .card h3 { color: #000; }
   #plan-form, .site-header .tagline, .actions, .skip-link { display: none; }
 }
+/* --- AADAYA EVENT ORGANIZATION SINGLE-PAGE LOCK --- */
+html, body {
+  height: 100vh !important;
+  max-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+body {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 8px 16px !important;
+}
+
+.site-header h1 {
+  font-size: 1.3rem !important;
+  margin: 2px 0 !important;
+  text-align: center;
+}
+
+main, form, .card-container {
+  max-height: calc(100vh - 70px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-evenly !important;
+  gap: 4px !important;
+  padding: 8px 16px !important;
+  box-sizing: border-box !important;
+}
+
+input, select, textarea {
+  height: 30px !important;
+  padding: 2px 8px !important;
+  font-size: 0.8rem !important;
+}
+
+textarea {
+  height: 38px !important;
+}
+
+button, input[type="submit"] {
+  height: 34px !important;
+  font-size: 0.85rem !important;
+  margin-top: 4px !important;
+}
