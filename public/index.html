@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Utsav AI - plan weddings, birthdays and community events with AI-generated budgets, timelines, vendor checklists and personalised ideas.">
+  <title>Utsav AI - Celebration &amp; Event Planner</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <h1>Utsav AI</h1>
+    <p class="tagline">Your GenAI celebration &amp; event planner. Powered by Gemini on Google Cloud.</p>
+  </header>
+
+  <main id="main">
+    <section class="card" aria-labelledby="form-title">
+      <h2 id="form-title">Tell us about your event</h2>
+      <p class="hint">Fields marked <span aria-hidden="true">*</span><span class="sr-only">with an asterisk</span> are required.</p>
+
+      <form id="plan-form" novalidate>
+        <div class="grid">
+          <div class="field">
+            <label for="eventType">Event type <span aria-hidden="true">*</span></label>
+            <select id="eventType" name="eventType" required aria-required="true">
+              <option value="">Choose an event</option>
+              <option>Wedding</option>
+              <option>Birthday</option>
+              <option>Engagement</option>
+              <option>Anniversary</option>
+              <option>Baby Shower</option>
+              <option>Housewarming</option>
+              <option>Community Event</option>
+              <option>Festival Celebration</option>
+              <option>Corporate Event</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="honoree">Who is it for?</label>
+            <input id="honoree" name="honoree" maxlength="120" placeholder="e.g. Aarav, turning 7" autocomplete="off">
+          </div>
+
+          <div class="field">
+            <label for="city">City</label>
+            <input id="city" name="city" maxlength="120" placeholder="e.g. Hyderabad" autocomplete="address-level2">
+          </div>
+
+          <div class="field">
+            <label for="date">Event date</label>
+            <input id="date" name="date" type="date">
+          </div>
+
+          <div class="field">
+            <label for="guests">Number of guests <span aria-hidden="true">*</span></label>
+            <input id="guests" name="guests" type="number" min="1" max="5000" required aria-required="true" inputmode="numeric" placeholder="e.g. 80">
+          </div>
+
+          <div class="field">
+            <label for="budget">Total budget in INR <span aria-hidden="true">*</span></label>
+            <input id="budget" name="budget" type="number" min="1000" max="100000000" step="500" required aria-required="true" inputmode="numeric" placeholder="e.g. 150000">
+          </div>
+
+          <div class="field">
+            <label for="theme">Style or theme</label>
+            <input id="theme" name="theme" maxlength="120" placeholder="e.g. traditional, eco-friendly, space">
+          </div>
+
+          <div class="field">
+            <label for="culture">Culture or traditions</label>
+            <input id="culture" name="culture" maxlength="120" placeholder="e.g. Telugu, Bathukamma, Punjabi">
+          </div>
+
+          <div class="field">
+            <label for="dietary">Dietary needs</label>
+            <input id="dietary" name="dietary" maxlength="120" placeholder="e.g. pure veg, Jain, no nuts">
+          </div>
+
+          <div class="field field-wide">
+            <label for="interests">Interests of the guest of honour</label>
+            <input id="interests" name="interests" maxlength="300" placeholder="e.g. cricket, dinosaurs, Bollywood music">
+          </div>
+
+          <div class="field field-wide">
+            <label for="notes">Anything else?</label>
+            <textarea id="notes" name="notes" maxlength="300" rows="2" placeholder="e.g. elderly guests, outdoor preferred"></textarea>
+          </div>
+        </div>
+
+        <div id="form-errors" class="errors" role="alert" aria-live="assertive"></div>
+        <button id="submit-btn" type="submit" class="btn">Plan my event with AI</button>
+      </form>
+    </section>
+
+    <section id="results" aria-live="polite" aria-busy="false" tabindex="-1"></section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Built for PromptWars Virtual Challenge 5 with Gemini, Vertex AI and Cloud Run. AI suggestions are estimates; please confirm prices with vendors.</p>
+  </footer>
+</body>
+</html>

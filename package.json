@@ -1,0 +1,19 @@
+{
+  "name": "utsav-ai",
+  "version": "1.0.0",
+  "description": "GenAI Celebration & Event Planner - budgets, timelines, vendor checklists and personalized ideas powered by Gemini on Vertex AI",
+  "type": "module",
+  "main": "server.js",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "@google/genai": "^1.0.0",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0"
+  },
+  "license": "MIT"
+}
