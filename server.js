@@ -18,4 +18,8 @@ function createAiClient() {
 }
 
 const app = createApp({ plan: createPlanner(createAiClient()) });
-app.listen(PORT, () => console.log(`Utsav AI listening on port ${PORT}`));
+
+// Bind explicitly to 0.0.0.0 so Cloud Run health checks pass
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Aadaya Event Organization server listening on port ${PORT}`);
+});
