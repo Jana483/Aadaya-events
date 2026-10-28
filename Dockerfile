@@ -7,19 +7,17 @@ ENV PORT=8080
 
 COPY package*.json ./
 
-# Install dependencies cleanly
+# Install dependencies
 RUN npm install --omit=dev --no-audit --no-fund
 
-# Copy all application source files & static public files
+# Copy source code and static assets
 COPY server.js ./
 COPY src ./src
 COPY public ./public
 
-# Use the non-root 'node' user for security
+# Use non-root node user
 USER node
 
-# Expose port 8080 for Cloud Run
 EXPOSE 8080
 
-# Start Express server
 CMD ["node", "server.js"]
